@@ -3,40 +3,17 @@ import styled from 'styled-components';
 
 import { ExchangeWalletContext } from '../context/ExchangeWalletContext';
 
-import reverseBtn from '../assets/ReverseBTN.png';
-
 const ExchangeForm = ({ coinData }) => {
 	const { myCoins, setMyCoins, myMoney, setMyMoney } = useContext(
 		ExchangeWalletContext
 	);
 	const [exchangeValue, setExchangeValue] = useState('');
-	const [reverse, setReverse] = useState(false);
 
-	let leftExchangeValue;
-	let rightExchangeValue;
 	let exchangeRateValue;
-
-	let exchangeType;
 
 	let myCoinsCopy = [...myCoins];
 
 	const exchangeRate = coinData.price;
-
-	// if (reverse) {
-	// 	exchangeRateValue = (Number(exchangeValue) / Number(exchangeRate)).toFixed(
-	// 		4
-	// 	);
-	// 	leftExchangeValue = 'USD';
-	// 	rightExchangeValue = coinData.symbol;
-	// 	exchangeType = true;
-	// } else {
-	// 	exchangeRateValue = (Number(exchangeValue) * Number(exchangeRate)).toFixed(
-	// 		4
-	// 	);
-	// 	leftExchangeValue = coinData.symbol;
-	// 	rightExchangeValue = 'USD';
-	// 	exchangeType = false;
-	// }
 
 	exchangeRateValue = (Number(exchangeValue) / Number(exchangeRate)).toFixed(4);
 
@@ -137,16 +114,11 @@ const Currency = styled.p`
 	font-weight: bold;
 `;
 
-const ReverseBtn = styled.button`
-	all: unset;
-	cursor: pointer;
-`;
-
 const ShoppingBtn = styled.button`
 	all: unset;
 	width: 60px;
 	height: 30px;
-	margin: 0 10%;
+	margin: 10px 10%;
 	color: #fff;
 	font-size: 20px;
 	font-weight: bold;

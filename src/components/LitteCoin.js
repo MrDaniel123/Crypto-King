@@ -65,7 +65,7 @@ const CoinIcon = styled.img`
 	grid-column: 0/1;
 	grid-row: 1/3;
 	width: 45px;
-	height: 45;
+	height: 45px;
 	border-radius: 11px;
 `;
 
